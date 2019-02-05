@@ -1,5 +1,7 @@
 package edu.graph.breadthfirstsearch;
 
+import edu.graph.pojo.Vertex;
+
 public class Application {
 
     public static void main(String[] args) {

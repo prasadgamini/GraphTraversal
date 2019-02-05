@@ -1,5 +1,7 @@
 package edu.graph.breadthfirstsearch;
 
+import edu.graph.pojo.Vertex;
+
 import java.util.LinkedList;
 import java.util.Queue;
 

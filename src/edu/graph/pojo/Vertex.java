@@ -1,4 +1,4 @@
-package edu.graph.breadthfirstsearch;
+package edu.graph.pojo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
