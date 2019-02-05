@@ -1,15 +1,18 @@
-package edu.graph.breadthfirstsearch;
+package edu.graph.app;
 
+import edu.graph.breadthfirstsearch.BreadthFirstSearch;
 import edu.graph.pojo.Vertex;
+import edu.grapth.depthfirstsearch.DepthFirstSearch;
 
 public class Application {
 
     public static void main(String[] args) {
-        Vertex rootVertex = initGraph();
-        new BreadthFirstSearch().search(rootVertex);
+        new BreadthFirstSearch().search(createGraph());
+        System.out.println("==========================");
+        new DepthFirstSearch().search(createGraph());
     }
 
-    private static Vertex initGraph() {
+    private static Vertex createGraph() {
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
         Vertex vertex3 = new Vertex(3);
