@@ -10,6 +10,8 @@ public class Application {
         new BreadthFirstSearch().search(createGraph());
         System.out.println("==========================");
         new DepthFirstSearch().search(createGraph());
+        System.out.println("==========================");
+        new DepthFirstSearch().searchRecursive(createGraph());
     }
 
     private static Vertex createGraph() {
@@ -22,6 +24,7 @@ public class Application {
 
         vertex1.addNeighborVertices(vertex2, vertex4);
         vertex2.addNeighborVertices(vertex1, vertex3);
+        vertex3.addNeighborVertices(new Vertex(6));
         vertex4.addNeighborVertices(vertex5);
 
         return vertex1;

@@ -22,4 +22,15 @@ public class DepthFirstSearch {
             }
         }
     }
+
+
+    public void searchRecursive(Vertex vertex) {
+        System.out.println(vertex.getData());
+        for(Vertex neighborVertex : vertex.getNeighborsList()) {
+            if(!neighborVertex.isVisited()) {
+                vertex.setVisited(true);
+                searchRecursive(neighborVertex);
+            }
+        }
+    }
 }
