@@ -13,6 +13,8 @@ public class TopologicalOrdering {
             if (!neighbor.isVisited())
                 dfs(neighbor);
         }
+
+        //Push the vertex to stack after visiting neighbors
         stack.push(vertex);
     }
 
