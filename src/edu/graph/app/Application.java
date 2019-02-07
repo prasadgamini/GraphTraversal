@@ -2,6 +2,7 @@ package edu.graph.app;
 
 import edu.graph.breadthfirstsearch.BreadthFirstSearch;
 import edu.graph.pojo.Vertex;
+import edu.graph.topologicalorder.TopologicalOrdering;
 import edu.grapth.depthfirstsearch.DepthFirstSearch;
 
 public class Application {
