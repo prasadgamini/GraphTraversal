@@ -5,6 +5,7 @@ public class MazeSolveApplication {
     public static void main(String[] args) {
         MazeProblemData mazeProblemData = new MazeProblemData(5, 5, "classpath:map.txt");
         System.out.println(mazeProblemData);
-        new MazeSolver().findWayOut();
+        MazeSolver mazeSolver = new MazeSolver(mazeProblemData.getMap(), mazeProblemData.getStartPositionRow(), mazeProblemData.getStartPositionColumn());
+        mazeSolver.findWayOut();
     }
 }

@@ -5,6 +5,19 @@ import org.springframework.util.ResourceUtils;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * The map is loaded from @link{map.txt}
+ * 1 1 1 1 1
+ * 1 2 0 1 1
+ * 1 1 0 1 1
+ * 1 1 0 3 1
+ * 1 1 1 1 1
+ *
+ * 2 --> Starting position
+ * 3 --> Ending position
+ * 1 --> wall
+ * 0 --> No wall, u can pass through
+ */
 public class MazeProblemData {
 
     private int[][] map;
