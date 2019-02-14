@@ -15,7 +15,7 @@ public class Vertex implements Comparable<Vertex> {
     public Vertex(String name) {
         this.name = name;
         neighborList = new ArrayList<>();
-        distance = Double.MIN_VALUE;
+        distance = Double.MAX_VALUE;
     }
 
     public String getName() {
