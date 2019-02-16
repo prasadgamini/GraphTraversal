@@ -8,7 +8,6 @@ public class Vertex implements Comparable<Vertex> {
 
     private String name;
     private List<Edge> neighborList;
-    private boolean visited;
     private Vertex predecessor;
     private double distance;
 
@@ -18,20 +17,8 @@ public class Vertex implements Comparable<Vertex> {
         distance = Double.MAX_VALUE;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public List<Edge> getNeighborList() {
         return neighborList;
-    }
-
-    public void setNeighborList(List<Edge> neighborList) {
-        this.neighborList = neighborList;
     }
 
     public double getDistance() {
@@ -48,14 +35,6 @@ public class Vertex implements Comparable<Vertex> {
 
     public void addNeighbors(Edge... edges) {
         Arrays.stream(edges).forEach(edge -> this.neighborList.add(edge));
-    }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
     }
 
     public Vertex getPredecessor() {
