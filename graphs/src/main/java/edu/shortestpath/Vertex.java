@@ -10,6 +10,7 @@ public class Vertex implements Comparable<Vertex> {
     private List<Edge> neighborList;
     private Vertex predecessor;
     private double distance;
+    private boolean visited; //Used in DAG shortest path algo.
 
     public Vertex(String name) {
         this.name = name;
@@ -43,6 +44,14 @@ public class Vertex implements Comparable<Vertex> {
 
     public void setPredecessor(Vertex predecessor) {
         this.predecessor = predecessor;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
     @Override
