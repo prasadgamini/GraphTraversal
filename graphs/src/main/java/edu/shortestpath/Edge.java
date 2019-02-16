@@ -1,13 +1,11 @@
-package edu.shortestpath.dijkstra;
+package edu.shortestpath;
 
 public class Edge {
     private double weight;
-    private Vertex startVertex;
     private Vertex targetVertex;
 
-    public Edge(double weight, Vertex startVertex, Vertex targetVertex) {
+    public Edge(double weight, Vertex targetVertex) {
         this.weight = weight;
-        this.startVertex = startVertex;
         this.targetVertex = targetVertex;
     }
 
@@ -17,14 +15,6 @@ public class Edge {
 
     public void setWeight(double weight) {
         this.weight = weight;
-    }
-
-    public Vertex getStartVertex() {
-        return startVertex;
-    }
-
-    public void setStartVertex(Vertex startVertex) {
-        this.startVertex = startVertex;
     }
 
     public Vertex getTargetVertex() {

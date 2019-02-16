@@ -1,5 +1,8 @@
 package edu.shortestpath.dijkstra;
 
+import edu.shortestpath.Edge;
+import edu.shortestpath.Vertex;
+
 public class DijkstraApplication {
 
     public static void main(String[] args) {
@@ -7,9 +10,9 @@ public class DijkstraApplication {
         Vertex vertexB = new Vertex("B");
         Vertex vertexC = new Vertex("C");
 
-        vertexA.addNeighbor(new Edge(1, vertexA, vertexB));
-        vertexA.addNeighbor(new Edge(10, vertexA, vertexC));
-        vertexB.addNeighbor(new Edge(1, vertexB, vertexC));
+        vertexA.addNeighbor(new Edge(1, vertexB));
+        vertexA.addNeighbor(new Edge(1, vertexC));
+        vertexB.addNeighbor(new Edge(1, vertexC));
 
         DijkstrasAlgo algo = new DijkstrasAlgo(vertexA);
         System.out.println("-------------------");

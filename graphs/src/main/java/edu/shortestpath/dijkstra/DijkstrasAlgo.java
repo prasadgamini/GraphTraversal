@@ -1,5 +1,8 @@
 package edu.shortestpath.dijkstra;
 
+import edu.shortestpath.Edge;
+import edu.shortestpath.Vertex;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
