@@ -38,7 +38,7 @@ public class BellmanFordAlgo {
 
         for (Edge edge : edges) {
             if (edge.getStartVertex().getDistance() != Double.MAX_VALUE) {
-                if (hasCycle(edge)) {
+                if (hasNegativeCycle(edge)) {
                     System.err.println("Negative cycle found...");
                     throw new RuntimeException("Negative cycle found...");
                 }
@@ -47,7 +47,7 @@ public class BellmanFordAlgo {
 
     }
 
-    private boolean hasCycle(Edge edge) {
+    private boolean hasNegativeCycle(Edge edge) {
         return edge.getStartVertex().getDistance() + edge.getWeight() < edge.getTargetVertex().getDistance();
     }
 
