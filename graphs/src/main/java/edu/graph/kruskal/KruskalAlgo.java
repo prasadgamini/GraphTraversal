@@ -12,13 +12,13 @@ public class KruskalAlgo {
 
         Collections.sort(edges);
 
-        for(Edge edge: edges) {
+        for (Edge edge : edges) {
             Vertex startVertex = edge.getStartVertex();
             Vertex targetVertex = edge.getTargetVertex();
 
-            if(disjointSet.find(startVertex.getNode()) != disjointSet.find(targetVertex.getNode())) {
+            if (disjointSet.find(startVertex.getNode()) != disjointSet.find(targetVertex.getNode())) {
                 mstList.add(edge);
-                if(mstList.size()==vertices.size()-1) break;
+                if (mstList.size() == vertices.size() - 1) break;
                 disjointSet.union(startVertex.getNode(), targetVertex.getNode());
             }
         }
