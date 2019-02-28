@@ -6,7 +6,7 @@ import java.util.List;
 
 public class KruskalAlgo {
 
-    public void mst(List<Vertex> vertices, List<Edge> edges) {
+    public List<Edge> mst(List<Vertex> vertices, List<Edge> edges) {
         List<Edge> mstList = new ArrayList<>();
         DisjointSet disjointSet = new DisjointSet(vertices);
 
@@ -23,5 +23,6 @@ public class KruskalAlgo {
             }
         }
         System.out.println(mstList);
+        return mstList;
     }
 }
