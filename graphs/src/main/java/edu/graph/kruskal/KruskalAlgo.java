@@ -9,6 +9,7 @@ public class KruskalAlgo {
     public List<Edge> mst(List<Vertex> vertices, List<Edge> edges) {
         List<Edge> mstList = new ArrayList<>();
         DisjointSet disjointSet = new DisjointSet(vertices);
+        double fullCost = 0.0;
 
         Collections.sort(edges);
 
@@ -18,11 +19,14 @@ public class KruskalAlgo {
 
             if (disjointSet.find(startVertex.getNode()) != disjointSet.find(targetVertex.getNode())) {
                 mstList.add(edge);
+                fullCost += edge.getWeight();
                 if (mstList.size() == vertices.size() - 1) break;
                 disjointSet.union(startVertex.getNode(), targetVertex.getNode());
             }
         }
-        System.out.println(mstList);
+//        System.out.println(mstList);
+        mstList.forEach(System.out::println);
+        System.out.println("Full cost :: " + fullCost);
         return mstList;
     }
 }
