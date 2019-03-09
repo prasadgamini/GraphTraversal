@@ -8,7 +8,6 @@ public class Vertex implements Comparable<Vertex> {
     private String name;
     private Edge minEdge;
     private boolean visited;
-    private Vertex previousVertex;
     private double distance;
     private List<Edge> neighbors;
 
@@ -40,14 +39,6 @@ public class Vertex implements Comparable<Vertex> {
 
     public void setVisited(boolean visited) {
         this.visited = visited;
-    }
-
-    public Vertex getPreviousVertex() {
-        return previousVertex;
-    }
-
-    public void setPreviousVertex(Vertex previousVertex) {
-        this.previousVertex = previousVertex;
     }
 
     public double getDistance() {
