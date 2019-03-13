@@ -1,20 +1,24 @@
-package edu.minimumspanningtree.kruskal.primseagar;
+package edu.minimumspanningtree.prims;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Vertex implements Comparable<Vertex> {
+public class Vertex {
+
     private String name;
-    private Edge minEdge;
     private boolean visited;
-    private double distance;
+    private Vertex previousVertex;
     private List<Edge> neighbors;
 
     public Vertex(String name) {
         this.name = name;
-        distance = Double.POSITIVE_INFINITY;
         neighbors = new ArrayList<>();
+    }
+
+    public void addNeighbor(Edge edge) {
+        this.neighbors.add(edge);
     }
 
     public String getName() {
@@ -25,14 +29,6 @@ public class Vertex implements Comparable<Vertex> {
         this.name = name;
     }
 
-    public Edge getMinEdge() {
-        return minEdge;
-    }
-
-    public void setMinEdge(Edge minEdge) {
-        this.minEdge = minEdge;
-    }
-
     public boolean isVisited() {
         return visited;
     }
@@ -41,12 +37,12 @@ public class Vertex implements Comparable<Vertex> {
         this.visited = visited;
     }
 
-    public double getDistance() {
-        return distance;
+    public Vertex getPreviousVertex() {
+        return previousVertex;
     }
 
-    public void setDistance(double distance) {
-        this.distance = distance;
+    public void setPreviousVertex(Vertex previousVertex) {
+        this.previousVertex = previousVertex;
     }
 
     public List<Edge> getNeighbors() {
@@ -59,11 +55,6 @@ public class Vertex implements Comparable<Vertex> {
 
     public void addNeighbors(Edge... edges) {
         Arrays.stream(edges).forEach(edge -> this.neighbors.add(edge));
-    }
-
-    @Override
-    public int compareTo(Vertex otherVertex) {
-        return Double.compare(this.distance, otherVertex.distance);
     }
 
     @Override

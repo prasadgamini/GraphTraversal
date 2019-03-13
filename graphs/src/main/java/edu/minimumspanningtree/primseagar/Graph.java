@@ -1,4 +1,4 @@
-package edu.minimumspanningtree.kruskal.primseagar;
+package edu.minimumspanningtree.primseagar;
 
 import java.util.ArrayList;
 import java.util.Arrays;

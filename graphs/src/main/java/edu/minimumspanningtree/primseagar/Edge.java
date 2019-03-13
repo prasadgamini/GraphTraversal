@@ -1,4 +1,4 @@
-package edu.minimumspanningtree.kruskal.primseagar;
+package edu.minimumspanningtree.primseagar;
 
 
 public class Edge implements Comparable<Edge> {

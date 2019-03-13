@@ -1,4 +1,4 @@
-package edu.minimumspanningtree.kruskal.primseagar;
+package edu.minimumspanningtree.primseagar;
 
 public class PrimsEagerApp {
     public static void main(String[] args) {
