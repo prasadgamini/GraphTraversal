@@ -1,4 +1,4 @@
-package edu.graph.kruskal;
+package edu.minimumspanningtree.kruskal;
 
 /**
  * DisJoint Set Node

@@ -1,6 +1,7 @@
-package edu.graph.kruskal;
+package edu.minimumspanningtree.kruskal.primseagar;
 
-public class Edge implements Comparable<Edge>{
+
+public class Edge implements Comparable<Edge> {
     private double weight;
     private Vertex startVertex; // Useful in bellman-ford algo, not required for dijkstra's algo
     private Vertex targetVertex;

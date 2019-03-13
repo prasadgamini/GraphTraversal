@@ -1,7 +1,4 @@
-package edu.graph.primseagar;
-
-import java.util.Arrays;
-import java.util.List;
+package edu.minimumspanningtree.kruskal.primseagar;
 
 public class PrimsEagerApp {
     public static void main(String[] args) {

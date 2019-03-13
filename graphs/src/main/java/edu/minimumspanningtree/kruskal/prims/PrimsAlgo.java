@@ -1,4 +1,4 @@
-package edu.graph.prims;
+package edu.minimumspanningtree.kruskal.prims;
 
 import java.util.ArrayList;
 import java.util.List;
