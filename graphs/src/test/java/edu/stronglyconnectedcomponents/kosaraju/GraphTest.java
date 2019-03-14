@@ -9,7 +9,7 @@ import static org.junit.Assert.assertFalse;
 public class GraphTest {
 
     @Test
-    public void transpose() {
+    public void testTranspose() {
         Vertex vertexS = new Vertex("S");
         Vertex vertexA = new Vertex("A");
         Vertex vertexB = new Vertex("B");
@@ -41,15 +41,14 @@ public class GraphTest {
         for (int i = 0; i < graph.getEdges().size(); i++) {
             Edge edge = graph.getEdges().get(i);
             Edge reverseEdge = transposeGraph.getEdges().get(i);
+
+            assertEquals(edge.getWeight(), reverseEdge.getWeight(),0.0);
             assertEquals(edge.getTargetVertex().getName(), reverseEdge.getStartVertex().getName());
             assertEquals(edge.getStartVertex().getName(), reverseEdge.getTargetVertex().getName());
         }
 
         transposeGraph.getVertices().forEach(vertex -> {
-            System.out.println(vertex);
             assertFalse(vertex.isVisited());
         });
-
-
     }
 }
