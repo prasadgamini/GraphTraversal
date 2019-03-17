@@ -45,10 +45,10 @@ public class Graph {
 
         for (Edge edge : this.edges) {
             Vertex startVertex = transposeGraph.getVertex(edge.getStartVertex().getName());
-            if(startVertex==null) startVertex =  new Vertex(edge.getStartVertex().getName());
+            if (startVertex == null) startVertex = new Vertex(edge.getStartVertex().getName());
 
             Vertex targetVertex = transposeGraph.getVertex(edge.getTargetVertex().getName());
-            if(targetVertex==null) targetVertex =  new Vertex(edge.getTargetVertex().getName());
+            if (targetVertex == null) targetVertex = new Vertex(edge.getTargetVertex().getName());
             transposeGraph.addEdge(new Edge(edge.getWeight(), targetVertex, startVertex));
 
         }

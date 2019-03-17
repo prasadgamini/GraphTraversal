@@ -22,8 +22,8 @@ public class KosarajuAlgo {
             Vertex vertex1 = transposeGraph.getVertex(vertex.getName());
             if (!vertex1.isVisited()) {
                 dfsOnTranspose(vertex1);
+                System.out.println();
             }
-            System.out.println();
         }
 
         return stronglyConnectedComponentsList;
