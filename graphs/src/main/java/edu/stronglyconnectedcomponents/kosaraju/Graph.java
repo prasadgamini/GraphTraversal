@@ -24,11 +24,16 @@ public class Graph {
     public void addEdge(Edge edge) {
         Vertex startVertex = edge.getStartVertex();
         Vertex targetVertex = edge.getTargetVertex();
+
         if (!vertices.contains(startVertex)) {
             vertices.add(startVertex);
+        } else {
+            startVertex = this.getVertex(startVertex.getName());
         }
         if (!vertices.contains(targetVertex)) {
             vertices.add(targetVertex);
+        } else {
+            targetVertex = this.getVertex(targetVertex.getName());
         }
         startVertex.addNeighbors(edge);
         this.edges.add(edge);
@@ -37,12 +42,16 @@ public class Graph {
     public Graph transpose() {
 
         Graph transposeGraph = new Graph();
-        this.edges.forEach(edge -> {
-                    Vertex newTargetVertex = new Vertex(edge.getTargetVertex().getName());
-                    Vertex newStartVertex = new Vertex(edge.getStartVertex().getName());
-                    transposeGraph.addEdge(new Edge(edge.getWeight(), newTargetVertex, newStartVertex));
-                }
-        );
+
+        for (Edge edge : this.edges) {
+            Vertex startVertex = transposeGraph.getVertex(edge.getStartVertex().getName());
+            if(startVertex==null) startVertex =  new Vertex(edge.getStartVertex().getName());
+
+            Vertex targetVertex = transposeGraph.getVertex(edge.getTargetVertex().getName());
+            if(targetVertex==null) targetVertex =  new Vertex(edge.getTargetVertex().getName());
+            transposeGraph.addEdge(new Edge(edge.getWeight(), targetVertex, startVertex));
+
+        }
         return transposeGraph;
     }
 
@@ -60,5 +69,14 @@ public class Graph {
 
     public void setEdges(List<Edge> edges) {
         this.edges = edges;
+    }
+
+    public Vertex getVertex(String name) {
+        for (Vertex v : vertices) {
+            if (v.getName().equals(name)) {
+                return v;
+            }
+        }
+        return null;
     }
 }
