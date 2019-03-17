@@ -37,10 +37,11 @@ public class Graph {
     public Graph transpose() {
 
         Graph transposeGraph = new Graph();
-        this.edges.forEach(edge ->{
-            Vertex newTargetVertex = new Vertex(edge.getTargetVertex().getName());
-            Vertex newStartVertex = new Vertex(edge.getStartVertex().getName());
-            transposeGraph.addEdge(new Edge(edge.getWeight(), newTargetVertex, newStartVertex));}
+        this.edges.forEach(edge -> {
+                    Vertex newTargetVertex = new Vertex(edge.getTargetVertex().getName());
+                    Vertex newStartVertex = new Vertex(edge.getStartVertex().getName());
+                    transposeGraph.addEdge(new Edge(edge.getWeight(), newTargetVertex, newStartVertex));
+                }
         );
         return transposeGraph;
     }
