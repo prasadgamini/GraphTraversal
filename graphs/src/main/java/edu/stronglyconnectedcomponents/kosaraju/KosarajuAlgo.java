@@ -21,7 +21,9 @@ public class KosarajuAlgo {
             Vertex vertex = stack.pop();
             Vertex vertex1 = transposeGraph.getVertex(vertex.getName());
             if (!vertex1.isVisited()) {
-                dfsOnTranspose(vertex1);
+                List<Vertex> scc = new ArrayList<>();
+                dfsOnTranspose(vertex1, scc);
+                if(!scc.isEmpty()) stronglyConnectedComponentsList.add(scc);
                 System.out.println();
             }
         }
@@ -41,14 +43,15 @@ public class KosarajuAlgo {
         stack.push(vertex);
     }
 
-    public void dfsOnTranspose(Vertex vertex) {
+    public void dfsOnTranspose(Vertex vertex, List<Vertex> scc) {
+        scc.add(vertex);
         System.out.print(vertex.getName() + " === ");
         vertex.setVisited(true);
         for (Edge neighbor : vertex.getNeighbors()) {
             Vertex targetVertex = neighbor.getTargetVertex();
 
             if (!targetVertex.isVisited()) {
-                dfsOnTranspose(targetVertex);
+                dfsOnTranspose(targetVertex, scc);
             }
         }
 

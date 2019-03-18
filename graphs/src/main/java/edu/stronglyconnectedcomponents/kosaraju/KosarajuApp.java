@@ -1,5 +1,7 @@
 package edu.stronglyconnectedcomponents.kosaraju;
 
+import java.util.List;
+
 public class KosarajuApp {
     public static void main(String[] args) {
         System.out.println("==START==");
@@ -36,7 +38,8 @@ public class KosarajuApp {
         );
 
         KosarajuAlgo kosarajuAlgo = new KosarajuAlgo();
-        kosarajuAlgo.getSCCs(graph);
+        List<List<Vertex>> sccList = kosarajuAlgo.getSCCs(graph);
+        System.out.println(sccList);
 
         System.out.println("==END==");
     }
