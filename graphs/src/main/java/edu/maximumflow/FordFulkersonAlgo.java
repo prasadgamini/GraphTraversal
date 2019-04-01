@@ -12,7 +12,7 @@ public class FordFulkersonAlgo {
         while (hasAugmentingPath(flowNetwork, s, t)) {
             List<Edge> edgeList = new ArrayList<>();
             int minFlow = Integer.MAX_VALUE;
-            for (Vertex v = t; v != s; v = toVertexEdgeMap.get(v).getFromVertex()) {
+            for (Vertex v = t; v != s; v = toVertexEdgeMap.get(v).getFromVertex()) { // reverse tracking
                 Edge edge = toVertexEdgeMap.get(v);
                 edgeList.add(edge);
                 minFlow = Math.min(minFlow, edge.getRecidualCapacity());
