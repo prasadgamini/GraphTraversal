@@ -17,10 +17,13 @@ public class FordFulkersonAlgo {
                 edgeList.add(edge);
                 minFlow = Math.min(minFlow, edge.getRecidualCapacity());
             }
-            System.out.println(edgeList);
+
             for (Edge edge: edgeList) {
                 edge.addFlow(minFlow);
             }
+
+            Collections.reverse(edgeList);//For printing sake
+            System.out.println("Augementing Path --> " + edgeList);
             maxFlow += minFlow;
         }
     }
