@@ -17,41 +17,9 @@ public class Edge {
         return fromVertex;
     }
 
-    public void setFromVertex(Vertex fromVertex) {
-        this.fromVertex = fromVertex;
-    }
-
     public Vertex getToVertex() {
         return toVertex;
     }
-
-    public void setToVertex(Vertex toVertex) {
-        this.toVertex = toVertex;
-    }
-
-    public int getFlow() {
-        return flow;
-    }
-
-    public void setFlow(int flow) {
-        this.flow = flow;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-//    public int getRecidualCapacityWithRespectTo(Vertex vertex) {
-//        if (vertex == fromVertex) {
-//            return flow; // backward edge in residual graph
-//        } else {
-//            return capacity - flow; // forward edge in residual graph
-//        }
-//    }
 
     public int getRecidualCapacity() {
         return capacity - flow;
@@ -66,6 +34,6 @@ public class Edge {
 
     @Override
     public String toString() {
-        return fromVertex + " - " + flow + " / " + capacity + " - " + toVertex;
+        return fromVertex + " --" + flow + "/" + capacity + "--> " + toVertex;
     }
 }

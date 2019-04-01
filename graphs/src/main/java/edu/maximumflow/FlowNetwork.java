@@ -9,7 +9,7 @@ public class FlowNetwork {
 
     private Map<Vertex, List<Edge>> vertexNeighborEdgesMap; // edge from Vertex and also edge to Vertex is also added here
 
-    public FlowNetwork(){
+    public FlowNetwork() {
         vertexNeighborEdgesMap = new HashMap<>();
     }
 
